@@ -20,7 +20,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   isAuthenticated: false,
   checkAuthentication: async () => {
     try {
-      const response = await axiosInstance.get("/api/email-metadata");
+      const response = await axiosInstance.get("/api/fetch-and-store-emails");
       if (response.headers["set-cookie"]) {
         set({ isAuthenticated: true });
       }
